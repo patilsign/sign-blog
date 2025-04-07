@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { PostContent } from "../../components/posts/post-detail/post-content";
+import { getAllPosts, getPostBySlug } from "../../lib/utils";
+import { useRouter } from "next/router";
 
-const SinglePostPage = () => {
+const PostDetailPage = () => {
+  const router = useRouter();
+  const slugId = router.query.slug;
+  const posts = getPostBySlug(slugId)[0];
   return (
-    <div>SinglePostPage</div>
-  )
-}
+    <section>
+      <PostContent posts={posts} />
+    </section>
+  );
+};
 
-export default SinglePostPage
+export default PostDetailPage;
