@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import AllPosts from "../../components/posts/all-posts";
+import { getAllPosts } from "../../lib/utils";
 
-const AllPost = () => {
-  return (
-    <div>AllPost</div>
-  )
-}
+const AllPostsPage = () => {
+  const _posts = getAllPosts();
+  return <AllPosts posts={_posts} />;
+};
 
-export default AllPost
+export default AllPostsPage;
