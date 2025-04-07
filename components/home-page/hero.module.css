@@ -1,0 +1,33 @@
+.hero {
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-grey-900),
+    var(--color-grey-800)
+  );
+  padding: var(--size-8) 0;
+}
+
+.image {
+  margin: auto;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--color-grey-800);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+  margin: var(--size-4) 0;
+  color: var(--color-grey-300);
+  font-size: var(--size-16);
+}
+
+.hero p {
+  margin: auto;
+  color: var(--color-grey-200);
+  font-size: var(--size-6);
+  max-width: 40rem;
+  width: 90%;
+}
