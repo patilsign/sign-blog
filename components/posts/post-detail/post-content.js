@@ -1,11 +1,12 @@
 import React from "react";
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
+import ReactMarkdown from "react-markdown";
 
 export const PostContent = (props) => {
-  const { excerpt, image, slug, title, date } = props.posts;
-
-  const formattedDate = new Date(date).toLocaleDateString("en-us", {
+  const { post } = props;
+  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  const formattedDate = new Date(post.date).toLocaleDateString("en-us", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -13,10 +14,14 @@ export const PostContent = (props) => {
 
   return (
     <article className={classes.content}>
-      <PostHeader image={image} title={title} slug={slug} />
+      <PostHeader
+        title={post.title}
+        imagePath={imagePath}
+        date={formattedDate}
+      />
       <div>
         <time>{formattedDate}</time>
-        <p>{excerpt}</p>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
     </article>
   );

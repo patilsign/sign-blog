@@ -1,9 +1,8 @@
 import React from "react";
 import PostGrid from "./post-grid";
-import classes from './all-posts.module.css'
+import classes from "./all-posts.module.css";
 
 const AllPosts = (props) => {
-          console.log(props,"All posts ");
   return (
     <section className={classes.posts}>
       <h1>All Posts</h1>
